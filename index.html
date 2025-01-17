@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project PJOK-BMI C</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-sekolah.png" alt="Logo Sekolah">
+        </div>
+        <h1>Project PJOK : BMI (Body Mass Index) Calculator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#bmi">Kalkulator BMI</a></li>
+            <li><a href="#tips">Tips Menjaga Berat Badan Ideal</a></li>
+            <li><a href="#jenis-olahraga">Jenis Olahraga</a></li>
+            <li><a href="#makanan-sehat">Makanan Sehat</a></li>
+            <li><a href="#penyakit-solusi">Penyakit dan Solusi</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="bmi">
+            <h2>Kalkulator BMI (Body Mass Index)</h2>
+            <p>Body Mass Index (BMI) adalah pengukuran lemak tubuh berdasarkan berat dan tinggi badan. Gunakan kalkulator ini untuk mengetahui apakah berat badan Anda ideal :</p>
+            <form id="bmi-calculator">
+                <div class="form-group">
+                    <label for="weight">Berat Badan (kg):</label>
+                    <input type="number" id="weight" name="weight" placeholder="Masukkan berat badan Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="height">Tinggi Badan (cm):</label>
+                    <input type="number" id="height" name="height" placeholder="Masukkan tinggi badan Anda" required>
+                </div>
+                <button type="button" onclick="calculateBMI()">Hitung BMI</button>
+            </form>
+            <div id="bmi-result-container">
+                <p id="bmi-result"></p>
+            </div>
+            <p>Dengan melakukan perhitungan BMI, Anda dapat memperkirakan apakah berat badan yang dimiliki sudah tergolong normal, kurus (underweight), atau obesitas (overweight).</p>
+            <hr>
+            <h3>Kategori BMI</h3>
+            <table id="bmi-table">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>BMI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kekurangan Berat Badan</td>
+                        <td>Kurang dari 18.5</td>
+                    </tr>
+                    <tr>
+                        <td>Berat Badan Normal</td>
+                        <td>18.5 - 24.9</td>
+                    </tr>
+                    <tr>
+                        <td>Kelebihan Berat Badan</td>
+                        <td>25 - 29.9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesitas</td>
+                        <td>30 ke atas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="tips">
+            <h2>Tips Menjaga Berat Badan Ideal</h2>
+            <ol>
+                <li><strong>Jenis Makanan yang Dikonsumsi :</strong><br>
+                    Menjaga berat badan ideal adalah salah satu aspek penting dalam menjalani gaya hidup sehat. Hal ini memerlukan keseimbangan antara pola makan, aktivitas fisik, dan kebiasaan hidup sehari-hari. Salah satu elemen utama dalam menjaga berat badan adalah memperhatikan jenis makanan yang dikonsumsi. Pilihan makanan yang kaya nutrisi seperti protein tanpa lemak, sayuran hijau, buah-buahan segar, dan biji-bijian utuh menjadi dasar yang kuat untuk pola makan sehat. Menghindari makanan olahan yang tinggi gula, garam, dan lemak jenuh juga menjadi langkah penting. Selain itu, memahami informasi gizi dari label makanan membantu seseorang untuk mengontrol asupan kalori harian.</li>
+                <li><strong>Mengatur Porsi Makan :</strong><br>
+                    Mengatur porsi makan juga menjadi strategi penting dalam menjaga berat badan. Dengan membiasakan makan dalam porsi kecil namun sering, tubuh dapat menjaga kadar gula darah tetap stabil sehingga rasa lapar yang berlebihan dapat dihindari. Teknik seperti menggunakan piring kecil atau memulai makan dengan hidangan rendah kalori seperti sayuran juga dapat membantu mengontrol jumlah makanan yang dikonsumsi. Selain itu, makan perlahan-lahan memungkinkan tubuh untuk memberi sinyal kenyang lebih cepat, sehingga risiko makan berlebihan dapat diminimalkan.</li>
+                <li><strong>Minum Air Putih :</strong><br>
+                    Minum air putih yang cukup setiap hari adalah kebiasaan sederhana namun berdampak besar. Tubuh yang terhidrasi dengan baik memiliki metabolisme yang lebih efisien dalam membakar kalori. Minum air putih sebelum makan juga dapat membantu mengurangi asupan kalori dengan memberikan rasa kenyang. Selain itu, air membantu tubuh mengeliminasi racun dan mendukung fungsi organ secara optimal.</li>
+                <li><strong>Olahraga :</strong><br>
+                    Aktivitas fisik adalah komponen esensial dalam mempertahankan berat badan ideal. Latihan rutin seperti berjalan kaki, jogging, atau olahraga lainnya tidak hanya membakar kalori tetapi juga meningkatkan massa otot dan kebugaran kardiovaskular. Sebaiknya aktivitas ini dilakukan secara konsisten, setidaknya 30 menit setiap hari. Aktivitas fisik juga membantu meningkatkan suasana hati melalui pelepasan endorfin, sehingga seseorang lebih termotivasi untuk tetap aktif.</li>
+                <li><strong>Gaya Hidup :</strong><br>
+                    Gaya hidup sehat melengkapi upaya menjaga berat badan. Tidur yang cukup, misalnya, sangat penting karena kurang tidur dapat mengganggu hormon yang mengatur nafsu makan, seperti leptin dan ghrelin. Stres yang dikelola dengan baik juga penting, karena stres yang tidak terkendali seringkali memicu kebiasaan makan emosional. Menghindari kebiasaan buruk seperti merokok dan konsumsi alkohol berlebihan turut mendukung kesehatan tubuh secara menyeluruh.</li>
+            </ol>
+        </section>
+        <section id="jenis-olahraga">
+            <h2>Jenis Olahraga untuk Menjaga Berat Badan Ideal</h2>
+            <ul>
+                <li><strong>Jogging atau Lari</strong><br>
+                    Membakar kalori dengan cepat dan meningkatkan kesehatan jantung.</li>
+                <li><strong>Bersepeda</strong><br>
+                    Membantu membakar lemak dan memperkuat otot kaki.</li>
+                <li><strong>Renang</strong><br>
+                    Latihan yang melibatkan seluruh tubuh, efektif untuk membakar kalori dan meningkatkan kekuatan otot.</li>
+                <li><strong>Latihan Kardio (Aerobik)</strong><br>
+                    Menari atau kelas aerobik meningkatkan detak jantung dan membantu pembakaran lemak.</li>
+                <li><strong>Yoga</strong><br>
+                    Membantu meningkatkan fleksibilitas, mengurangi stres, dan mengontrol berat badan dengan meningkatkan kesadaran makan.</li>
+                <li><strong>Angkat Beban</strong><br>
+                    Meningkatkan metabolisme dengan membangun massa otot.</li>
+                <li><strong>HIIT (High-Intensity Interval Training)</strong><br>
+                    Latihan intensitas tinggi dengan interval istirahat pendek yang efektif membakar kalori.</li>
+                <li><strong>Berenang atau Latihan Air</strong><br>
+                    Alternatif yang lembut untuk persendian tetapi tetap membakar kalori.</li>
+                <li><strong>Lompat Tali (Skipping)</strong><br>
+                    Efektif membakar kalori dalam waktu singkat, melatih kelincahan, dan meningkatkan stamina.</li>
+                <li><strong>Berjalan Cepat (Power Walking)</strong><br>
+                    Alternatif ringan untuk jogging, membantu membakar kalori dan meningkatkan kesehatan jantung.</li>
+                <li><strong>Pilates</strong><br>
+                    Fokus pada kekuatan inti, fleksibilitas, dan postur tubuh, yang dapat membantu membentuk tubuh ideal.</li>
+                <li><strong>Zumba atau Dance Workout</strong><br>
+                    Menyenangkan dan bermanfaat untuk kesehatan kardiovaskular serta membakar banyak kalori.</li>
+                <li><strong>Climbing (Wall Climbing atau Mendaki Gunung)</strong><br>
+                    Melatih kekuatan tubuh bagian atas dan meningkatkan ketahanan fisik.</li>
+                <li><strong>Kickboxing</strong><br>
+                    Kombinasi gerakan menendang dan meninju yang efektif untuk pembakaran lemak dan membangun kekuatan.</li>
+                <li><strong>Olahraga Raket (Tenis atau Badminton)</strong><br>
+                    Melatih refleks, meningkatkan stamina, dan membakar banyak energi.</li>
+                <li><strong>Olahraga Tim (Sepak Bola, Bola Basket, atau Voli)</strong><br>
+                    Membakar kalori secara dinamis sambil melatih keterampilan sosial dan kerja sama tim.</li>
+                <li><strong>Bouldering atau Panjat Tebing Bebas</strong><br>
+                    Menantang kekuatan, keseimbangan, dan fleksibilitas, serta efektif dalam membakar kalori.</li>
+                <li><strong>Rowing (Mendayung)</strong><br>
+                    Melatih kekuatan tubuh bagian atas dan kardio, membakar kalori secara efektif.</li>
+                <li><strong>Hiking (Mendaki)</strong><br>
+                    Aktivitas luar ruangan yang membakar kalori dan meningkatkan stamina, sambil menikmati alam.</li>
+                <li><strong>CrossFit</strong><br>
+                    Program latihan fungsional dengan intensitas tinggi, menggabungkan kekuatan, kardio, dan fleksibilitas.</li>
+                <li><strong>Skating atau Rollerblading</strong><br>
+                    Melatih keseimbangan dan otot kaki sambil membakar kalori dengan cara yang menyenangkan.</li>
+                <li><strong>Parkour</strong><br>
+                    Aktivitas fisik yang menggabungkan gerakan melompat, berlari, dan memanjat, menantang seluruh tubuh.</li>
+                <li><strong>Hula Hoop</strong><br>
+                    Olahraga menyenangkan yang melatih otot inti dan membakar kalori.</li>
+                <li><strong>Belly Dancing (Tari Perut)</strong><br>
+                    Membantu memperkuat otot inti dan membakar lemak, sambil meningkatkan fleksibilitas.</li>
+                <li><strong>Tai Chi</strong><br>
+                    Olahraga yang menenangkan dan meningkatkan keseimbangan, fleksibilitas, serta kesadaran tubuh.</li>
+                <li><strong>Roller Skiing atau Cross-Country Skiing</strong><br>
+                    Alternatif menarik yang menggabungkan kekuatan dan daya tahan untuk membakar kalori tinggi.</li>
+
+            </ul>
+        </section>
+        <section id="makanan-sehat">
+            <h2>Makanan Sehat: 4 Sehat 5 Sempurna</h2>
+            <p>"4 Sehat 5 Sempurna" adalah konsep pola makan sehat yang sering diajarkan di Indonesia untuk memastikan tubuh mendapatkan gizi yang cukup dan seimbang. Berikut adalah materi terkait dengan 4 Sehat 5 Sempurna:</p>
+
+            <h3>1. Pengenalan 4 Sehat 5 Sempurna</h3>
+            <p>4 Sehat mengacu pada empat jenis makanan yang harus ada dalam diet sehari-hari untuk menjaga kesehatan, yaitu:</p>
+            <ul>
+                <li><strong>Karbohidrat</strong> (sumber energi seperti nasi, roti, atau ubi)</li>
+                <li><strong>Protein</strong> (sumber pembangun tubuh seperti daging, ikan, telur, atau tempe)</li>
+                <li><strong>Sayur-sayuran</strong> (sumber vitamin dan mineral)</li>
+                <li><strong>Buah-buahan</strong> (sumber serat, vitamin, dan mineral)</li>
+            </ul>
+            <p>5 Sempurna adalah tambahan yang mencakup:</p>
+            <ul>
+                <li><strong>Air</strong> yang cukup untuk menjaga keseimbangan cairan tubuh dan membantu proses metabolisme.</li>
+            </ul>
+
+            <h3>2. Tujuan dari 4 Sehat 5 Sempurna</h3>
+            <ul>
+                <li>Menjaga keseimbangan gizi dalam tubuh</li>
+                <li>Meningkatkan daya tahan tubuh dan mencegah penyakit</li>
+                <li>Meningkatkan kualitas hidup dengan pola makan yang bergizi dan seimbang</li>
+                <li>Memenuhi kebutuhan energi agar tubuh dapat beraktivitas dengan optimal</li>
+            </ul>
+
+            <h3>3. Rincian Komponen 4 Sehat 5 Sempurna</h3>
+            <ul>
+                <li><strong>Karbohidrat:</strong> Sumber energi utama yang dibutuhkan tubuh. Sumbernya antara lain nasi, roti, kentang, atau jagung.</li>
+                <li><strong>Protein:</strong> Berfungsi untuk pertumbuhan, perbaikan sel-sel tubuh, dan pembentukan enzim. Sumber protein meliputi ikan, daging, telur, tempe, tahu, atau kacang-kacangan.</li>
+                <li><strong>Sayur:</strong> Menyediakan vitamin dan mineral penting, serta serat yang baik untuk pencernaan. Sayur-sayuran seperti bayam, kangkung, wortel, brokoli sangat disarankan.</li>
+                <li><strong>Buah:</strong> Kaya akan vitamin, serat, dan antioksidan. Buah-buahan seperti apel, pisang, jeruk, dan pepaya bermanfaat untuk meningkatkan kekebalan tubuh.</li>
+                <li><strong>Air:</strong> Tubuh membutuhkan air untuk proses metabolisme, hidrasi, dan menjaga keseimbangan suhu tubuh. Sebaiknya konsumsi minimal 8 gelas air setiap hari.</li>
+            </ul>
+
+            <h3>4. Contoh Menu 4 Sehat 5 Sempurna</h3>
+            <ul>
+                <li><strong>Sarapan:</strong> Nasi goreng dengan telur, sayur-sayuran, dan segelas air putih.</li>
+                <li><strong>Makan Siang:</strong> Nasi, ikan bakar, lalapan (sayur), dan buah segar seperti pepaya.</li>
+                <li><strong>Makan Malam:</strong> Sup sayur dengan tempe atau tahu, nasi, dan air putih.</li>
+            </ul>
+
+            <h3>5. Peran 4 Sehat 5 Sempurna dalam Kesehatan</h3>
+            <ul>
+                <li>Mencegah gangguan gizi seperti kekurangan vitamin, mineral, atau protein.</li>
+                <li>Menjaga berat badan ideal dan mencegah obesitas.</li>
+                <li>Meningkatkan fungsi tubuh secara keseluruhan, mulai dari sistem pencernaan hingga sistem kekebalan tubuh.</li>
+            </ul>
+
+            <h3>6. Pentingnya Konsistensi dalam Pola Makan Sehat</h3>
+            <p>Agar tubuh mendapatkan manfaat maksimal, penting untuk menjaga keberagaman makanan dan memastikan kebutuhan gizi tercukupi secara merata setiap hari.</p>
+
+            <h3>Jenis makanan 4 sehat 5 sempurna contohnya:</h3>
+            <ul>
+                <li>Makanan pokok</li>
+                <li>Lauk</li>
+                <li>Sayur</li>
+                <li>Buah</li>
+                <li>Susu</li>
+            </ul>
+
+            <h3>Manfaat konsumsi makanan 4 sehat 5 sempurna:</h3>
+            <ul>
+                <li>Menurunkan kadar gula darah</li>
+                <li>Menjaga berat badan</li>
+                <li>Mencegah gizi buruk</li>
+            </ul>
+        </section>
+        <section id="penyakit-solusi">
+            <h2>Penyakit Terkait Berat Badan dan Solusinya</h2>
+            <ol>
+                <li><strong>Obesitas:</strong> Diet rendah kalori, olahraga rutin, dan konsultasi medis untuk terapi atau operasi jika diperlukan. Hindari makanan cepat saji dan minuman manis.</li>
+                <li><strong>Malnutrisi:</strong> Konsumsi makanan bergizi tinggi seperti protein, lemak sehat, dan vitamin. Gunakan suplemen jika perlu, dan konsultasikan ke dokter untuk penanganan lebih lanjut.</li>
+                <li><strong>Diabetes Tipe 2:</strong> Diet rendah gula dan karbohidrat olahan, olahraga teratur, konsumsi obat sesuai resep dokter, dan cek gula darah secara berkala.</li>
+                <li><strong>Hipertensi:</strong> Konsumsi makanan rendah garam, rutin berolahraga, manajemen stres, dan gunakan obat antihipertensi sesuai saran dokter.</li>
+                <li><strong>Penyakit Jantung:</strong> Konsumsi makanan kaya omega-3 dan serat, lakukan latihan kardio seperti bersepeda atau jogging, serta kelola faktor risiko seperti kolesterol dan tekanan darah.</li>
+                <li><strong>Stroke:</strong> Perbanyak makanan tinggi antioksidan, lakukan olahraga ringan, dan pantau kesehatan secara rutin.</li>
+                <li><strong>Osteoartritis:</strong> Kurangi berat badan untuk mengurangi tekanan pada sendi, lakukan fisioterapi, dan gunakan obat antiinflamasi jika diperlukan.</li>
+                <li><strong>Gangguan Pernapasan:</strong> Penurunan berat badan dapat membantu mengurangi gejala sleep apnea, gunakan CPAP untuk tidur, dan lakukan latihan pernapasan.</li>
+                <li><strong>Asma:</strong> Konsumsi makanan antiinflamasi, pertahankan berat badan ideal, dan hindari alergen.</li>
+                <li><strong>Kanker:</strong> Konsumsi makanan kaya antioksidan, rutin berolahraga, dan lakukan screening untuk deteksi dini.</li>
+                <li><strong>Dislipidemia:</strong> Kurangi lemak jenuh, perbanyak serat dan omega-3, serta gunakan obat penurun kolesterol seperti statin.</li>
+                <li><strong>Fatty Liver Disease:</strong> Hindari alkohol dan makanan tinggi lemak trans, serta rutin berolahraga.</li>
+                <li><strong>Sindrom Metabolik:</strong> Gabungkan diet sehat, olahraga, dan manajemen stres. Gunakan obat jika diperlukan.</li>
+                <li><strong>Depresi dan Kecemasan:</strong> Konsultasikan ke psikolog, lakukan olahraga rutin, dan praktikkan meditasi.</li>
+                <li><strong>Infertilitas:</strong> Pertahankan berat badan sehat dan konsultasikan dengan dokter untuk perawatan lebih lanjut.</li>
+                <li><strong>PCOS:</strong> Diet tinggi protein dan serat, olahraga rutin, serta kurangi gula dan karbohidrat olahan.</li>
+                <li><strong>Anoreksia Nervosa:</strong> Psikoterapi oleh tim medis, pemulihan gizi secara bertahap, dan dukungan dari ahli gizi.</li>
+                <li><strong>Penyakit Ginjal:</strong> Batasi konsumsi garam, protein, serta makanan tinggi fosfor atau kalium, dan pantau tekanan darah.</li>
+                <li><strong>Gout:</strong> Hindari makanan tinggi purin seperti daging merah, kerang, dan alkohol. Gunakan obat seperti allopurinol sesuai resep dokter.</li>
+                <li><strong>Edema:</strong> Batasi asupan garam, tingkatkan protein dalam diet, dan lakukan olahraga ringan untuk meningkatkan sirkulasi.</li>
+            </ol>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Web dibuat oleh Kelompok 1 (Program EXCEL) - XI TKJ II<br>
+        ZAENAL - MUZAKIR - ARDI - GILANG - HAIKAL</p>
+    </footer>
+</body>
+</html>
