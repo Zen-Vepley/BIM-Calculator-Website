@@ -1,61 +1,49 @@
 function calculateBMI() {
-    const weight = parseFloat(document.getElementById("weight").value);
-    const height = parseFloat(document.getElementById("height").value) / 100;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value) / 100;
+    const resultContainer = document.getElementById('bmi-result');
 
-    if (isNaN(weight) || isNaN(height) || height <= 0) {
-        alert("Mana bisa bang, coba lagi");
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        resultContainer.innerText = 'Isi yang bener!';
+        resultContainer.style.color = 'red';
         return;
     }
 
     const bmi = (weight / (height * height)).toFixed(1);
+    let category = '';
+    let color = '';
 
-    let category = "";
     if (bmi < 18.5) {
-        category = "Kekurangan Berat Badan";
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
-        category = "Berat Badan Normal";
-    } else if (bmi >= 25 && bmi <= 29.9) {
-        category = "Kelebihan Berat Badan";
+        category = 'Kekurangan Berat Badan';
+        color = 'orange';
+    } else if (bmi < 24.9) {
+        category = 'Berat Badan Normal';
+        color = 'green';
+    } else if (bmi < 29.9) {
+        category = 'Kelebihan Berat Badan';
+        color = 'darkgoldenrod';
     } else {
-        category = "Obesitas";
+        category = 'Obesitas';
+        color = 'red';
     }
 
-    const resultContainer = document.getElementById("bmi-result-container");
-    const resultText = document.getElementById("bmi-result");
-
-    resultText.innerHTML = `BMI Anda: <strong>${bmi}</strong> (${category})`;
-
-    resultContainer.classList.remove("fade-in");
-    void resultContainer.offsetWidth;
-    resultContainer.classList.add("fade-in");
+    animateBMIResult(0, parseFloat(bmi), resultContainer, category, color);
 }
 
-function showBMITable() {
-    const bmiTable = document.getElementById("bmi-table");
-    bmiTable.classList.add("slide-in");
+function animateBMIResult(start, end, element, category, color) {
+    let current = start;
+    const increment = (end - start) / 50;
+    const interval = setInterval(() => {
+        current += increment;
+        element.innerHTML = `BMI Anda: <strong>${current.toFixed(1)}</strong>`;
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            clearInterval(interval);
+            element.innerHTML = `
+                <p style="font-size: 1.5rem; color: ${color};">
+                    BMI Anda: <strong>${end.toFixed(1)}</strong>
+                </p>
+                <p>Kategori: <strong>${category}</strong></p>
+            `;
+        }
+    }, 20);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    showBMITable();
-});
-
-function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-        element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll("nav ul li a");
-    navLinks.forEach(link => {
-        link.addEventListener("click", event => {
-            event.preventDefault();
-            const target = link.getAttribute("href");
-            smoothScroll(target);
-        });
-    });
-});
