@@ -4,7 +4,7 @@ function calculateBMI() {
     const resultContainer = document.getElementById('bmi-result');
 
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-        resultContainer.innerText = 'Isi yang bener!';
+        resultContainer.innerText = 'ERROR!';
         resultContainer.style.color = 'red';
         return;
     }
